@@ -1,0 +1,31 @@
+/*
+ * @lc app=leetcode id=9 lang=javascript
+ *
+ * [9] Palindrome Number
+ */
+
+// @lc code=start
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    if (x < 0 ) {
+        return false;
+    }
+
+    return x === reversedInteger(x);
+};
+
+var reversedInteger = function(x) {
+    let reversed = 0;
+
+    while (x > 0) {
+        reversed = (reversed * 10) + (x % 10);
+        x = Math.floor(x / 10);
+    }
+
+    return reversed;
+}
+// @lc code=end
+
